@@ -1,16 +1,28 @@
 package com.oneot.forecast.controller;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.oneot.forecast.model.Forecast;
+import com.oneot.forecast.service.ForecastService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.io.IOException;
+import java.util.ArrayList;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping(value="/",produces = "application/json; charset=utf-8")
 @CrossOrigin(origins = "http://localhost:3000")
 public class ForecastController {
+
+    ForecastService forecastService ;
+
+    @Autowired
+    ForecastController(ForecastService forecastService){
+        this.forecastService = forecastService;
+    }
+
     @GetMapping
-    public String getForecast(){
-        return "home";
+    public ArrayList<Forecast> getForecast() throws IOException {
+
+        return this.forecastService.getForecasts().getForecast();
     }
 }
