@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  oneot-backend:
+    build: ./backend
+    container_name: oneot-backend
+    ports:
+      - "8080:8080"
+  oneot-frontend:
+    build: ./frontend
+    container_name: oneot-frontend
+    ports:
+      - "3000:3000"

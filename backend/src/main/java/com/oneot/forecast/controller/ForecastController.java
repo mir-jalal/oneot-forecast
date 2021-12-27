@@ -10,7 +10,6 @@ import java.util.ArrayList;
 
 @RestController
 @RequestMapping(value="/",produces = "application/json; charset=utf-8")
-@CrossOrigin(origins = "http://localhost:3000")
 public class ForecastController {
 
     ForecastService forecastService ;
