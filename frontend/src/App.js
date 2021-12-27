@@ -1,9 +1,13 @@
 import './App.css';
-import Place from './components/Place';
+import Main from './components/Main';
 
 function App() {
   return (
-    <Place />
+      <div className="App">
+        <header className="App-header">
+          <Main />
+        </header>
+      </div>
   );
 }
 

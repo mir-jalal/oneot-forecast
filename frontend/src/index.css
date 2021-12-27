@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.info{
+  width: 100%;
+  display: flex !important;
+}
+
+.list-group-item{
+  text-align: left;
+}
+
+.font-size{
+  font-size: 0.7em !important;
+}
